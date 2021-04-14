@@ -1,0 +1,28 @@
+{
+  "name": "novicebot",
+  "version": "1.0.0",
+  "description": "discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arun-kc/novicebot.git"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "Arun KC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arun-kc/novicebot/issues"
+  },
+  "homepage": "https://github.com/Arun-kc/novicebot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.1"
+  }
+}
