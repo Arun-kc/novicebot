@@ -27,6 +27,10 @@ function readyDiscord(){
 
 client.on("message", message => {
 
+	if(message.author.id==process.env.AUTHORID){
+		message.react('🤓');
+	}
+
     prefix = process.env.prefix;
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
