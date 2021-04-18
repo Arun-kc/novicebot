@@ -17,7 +17,9 @@ module.exports = {
         
             const index = Math.floor(Math.random() * json.results.length);
         
-            msg.reply(json.results[index].url);
+            //msg.reply(json.results[index].url);
+            msg.channel.send(json.results[index].url);
+
 
     }
 };
