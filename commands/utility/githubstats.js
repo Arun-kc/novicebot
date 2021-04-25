@@ -27,7 +27,11 @@ module.exports = {
         .setURL(json.html_url)
         .setThumbnail(json.avatar_url)
         .addFields(
+            { name: 'Bio : ', value : json.bio},
+            { name: 'Followers', value: json.followers, inline: true },
+            { name: 'Following', value: json.following, inline: true },
             { name: `Stared Repositories : ${noOfStaredRepos.length}`,value: '\u200B'},
+            { name: `Public Repositores : ${json.public_repos}`,value: '\u200B'},
             { name: `Total Repositores : ${noOfTotalRepos.length}`,value: '\u200B'},
         )
         .setTimestamp();
