@@ -18,7 +18,7 @@ module.exports = {
 
 			if(target) {
 				const targetMember = msg.guild.members.cache.get(target.id);
-				targetMember.ban();
+				targetMember.kick();
 				const embed = new Discord.MessageEmbed()
 					.setColor('RED')
 					.setDescription(`✅ ${tag} User ${target.tag} has been kicked successfully!!`);
