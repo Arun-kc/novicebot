@@ -56,5 +56,10 @@ client.on('message', message => {
 
 });
 
+client.on('guildCreate', guild => {
+	const channel = guild.channels.cache.find(c => c.type === 'text' && c.permissionsFor(guild.me).has('SEND_MESSAGES'));
+	channel.send('Thanks for inviting me');
+});
+
 client.login(process.env.BOTTOKEN);
 
