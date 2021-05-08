@@ -1,7 +1,7 @@
 // //message used for debugging
 // console.log("beep beep!!");
 
-require("dotenv").config();
+require('dotenv').config();
 const fs = require('fs');
 
 const Discord = require('discord.js');
@@ -21,33 +21,35 @@ for (const folder of commandFolders) {
 
 client.once('ready', readyDiscord);
 
-function readyDiscord(){
-    console.log('working bud!!');
+function readyDiscord() {
+	console.log('working bud!!');
 }
 
-client.on("message", message => {
+client.on('message', message => {
 
-	if(message.author.id==process.env.AUTHORID){
+	if(message.author.id == process.env.AUTHORID) {
 		message.react('🤓');
 	}
 
-    prefix = process.env.prefix;
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
+	const prefix = process.env.prefix;
+	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
 	const commandName = args.shift().toLowerCase();
-    console.log(commandName,args);
+	console.log(commandName, args);
 	const command = client.commands.get(commandName)
 		|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
-        console.log(command);
+	console.log(command);
 
 	if (!command) return message.channel.send('No such command exist!!');
 
-    try {
-        
+	try {
+
 		command.execute(message, args);
-	} catch (error) {
+
+	}
+	catch (error) {
 		console.error(error);
 		message.reply('Sorry!! there was an error trying to execute that command!');
 	}

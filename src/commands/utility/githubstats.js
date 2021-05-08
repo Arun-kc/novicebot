@@ -1,43 +1,43 @@
 const Discord = require('discord.js');
 const fetch = require('node-fetch');
 
-async function getJson (response){
-    let json = await response.json()
-    return json
+async function getJson(response) {
+	const json = await response.json();
+	return json;
 }
 
 module.exports = {
-    name: 'githubstats',
-    async execute(msg, args){
-        let user = args[0]
-        let url =  `https://api.github.com/users/${user}`
-        let response = await fetch(url);
-        let json = await getJson(response)
-        console.log(json);
+	name: 'githubstats',
+	async execute(msg, args) {
+		const user = args[0];
+		const url = `https://api.github.com/users/${user}`;
+		const response = await fetch(url);
+		const json = await getJson(response);
+		console.log(json);
 
-        let responseStaredRepos = await fetch(`https://api.github.com/users/${json.login}/starred`);
-        let noOfStaredRepos = await getJson(responseStaredRepos)
+		const responseStaredRepos = await fetch(`https://api.github.com/users/${json.login}/starred`);
+		const noOfStaredRepos = await getJson(responseStaredRepos);
 
-        let responseTotalRepos = await fetch(`https://api.github.com/users/${json.login}/repos`);
-        let noOfTotalRepos = await getJson(responseTotalRepos)
-        
-        const githubEmbed = new Discord.MessageEmbed()
-        .setColor('#0099ff')
-        .setTitle(`Github stats of ${json.login}`)
-        .setURL(json.html_url)
-        .setThumbnail(json.avatar_url)
-        .addFields(
-            { name: 'Bio : ', value : json.bio},
-            { name: 'Followers', value: json.followers, inline: true },
-            { name: 'Following', value: json.following, inline: true },
-            { name: `Stared Repositories : ${noOfStaredRepos.length}`,value: '\u200B'},
-            { name: `Public Repositores : ${json.public_repos}`,value: '\u200B'},
-            { name: `Total Repositores : ${noOfTotalRepos.length}`,value: '\u200B'},
-        )
-        .setTimestamp();
+		const responseTotalRepos = await fetch(`https://api.github.com/users/${json.login}/repos`);
+		const noOfTotalRepos = await getJson(responseTotalRepos);
 
-    msg.channel.send(githubEmbed);
+		const githubEmbed = new Discord.MessageEmbed()
+			.setColor('#0099ff')
+			.setTitle(`Github stats of ${json.login}`)
+			.setURL(json.html_url)
+			.setThumbnail(json.avatar_url)
+			.addFields(
+				{ name: 'Bio : ', value : json.bio },
+				{ name: 'Followers', value: json.followers, inline: true },
+				{ name: 'Following', value: json.following, inline: true },
+				{ name: `Stared Repositories : ${noOfStaredRepos.length}`, value: '\u200B' },
+				{ name: `Public Repositores : ${json.public_repos}`, value: '\u200B' },
+				{ name: `Total Repositores : ${noOfTotalRepos.length}`, value: '\u200B' },
+			)
+			.setTimestamp();
 
-    }
-    
+		msg.channel.send(githubEmbed);
+
+	},
+
 };

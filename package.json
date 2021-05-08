@@ -27,5 +27,8 @@
     "dotenv": "^8.2.0",
     "enmap": "^5.8.4",
     "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.26.0"
   }
 }
