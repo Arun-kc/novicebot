@@ -42,14 +42,14 @@ client.on("message", message => {
 
         console.log(command);
 
-	if (!command) return message.channel.send('no such msg!!');
+	if (!command) return message.channel.send('No such command exists!!');
 
     try {
         
 		command.execute(message, args);
 	} catch (error) {
 		console.error(error);
-		message.reply('there was an error trying to execute that command!');
+		message.reply('Sorry!! there was an error trying to execute that command!');
 	}
 
 });
