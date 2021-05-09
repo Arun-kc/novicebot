@@ -1,4 +1,5 @@
-const fetch = require('node-fetch');
+const Discord = require('discord.js');
+const axios = require('axios');
 
 module.exports = {
 	name : 'gif',
@@ -11,14 +12,19 @@ module.exports = {
 
 		const url = `https://g.tenor.com/v1/search?q=${keywords}&key=${process.env.TENORKEY}&contentfilter=high`;
 
-		const response = await fetch(url);
-		const json = await response.json();
-		console.log(json);
+		const response = await axios(url);
 
-		const index = Math.floor(Math.random() * json.results.length);
+		const index = Math.floor(Math.random() * response.data.results.length);
 
-		// msg.reply(json.results[index].url);
-		msg.channel.send(json.results[index].url);
+		const media = response.data.results[index].media;
+		const gif = media[0].gif.url;
+		console.log(media[0].gif.url);
+
+		const embed = new Discord.MessageEmbed()
+			.setImage(gif)
+			.setColor('RANDOM')
+			.setTimestamp();
+		msg.channel.send(embed);
 
 
 	},

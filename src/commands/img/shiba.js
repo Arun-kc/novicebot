@@ -1,16 +1,15 @@
 const Discord = require('discord.js');
-const fetch = require('node-fetch');
+const axios = require('axios');
 
 module.exports = {
 	name : 'shiba',
 	async execute(msg) {
 
 		const url = 'http://shibe.online/api/shibes';
-		const response = await fetch(url);
-		const json = await response.json();
+		const response = await axios.get(url);
+		console.log(response.data[0]);
 
-		console.log(json[0]);
-		const img = json[0];
+		const img = response.data[0];
 
 		const embed = new Discord.MessageEmbed()
 			.setTitle('Here is your shiba!!')
@@ -18,7 +17,6 @@ module.exports = {
 			.setColor('RANDOM')
 			.setTimestamp();
 		msg.channel.send(embed);
-
 
 	},
 };
