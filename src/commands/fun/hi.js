@@ -7,6 +7,7 @@ const replies = [
 
 module.exports = {
 	name: 'hi',
+	category: 'fun',
 	// eslint-disable-next-line no-unused-vars
 	execute(msg, args) {
 

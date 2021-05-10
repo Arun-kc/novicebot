@@ -3,6 +3,7 @@ const axios = require('axios');
 
 module.exports = {
 	name : 'gif',
+	category : 'fun',
 	async execute(msg, args) {
 
 		let keywords = 'random';
