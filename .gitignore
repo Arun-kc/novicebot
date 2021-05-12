@@ -1,5 +1,7 @@
 # env variables
 .env
+#todolist
+todolist.txt
 #package-lock
 package-lock.json
 # Logs

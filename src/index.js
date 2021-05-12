@@ -3,6 +3,7 @@
 
 require('dotenv').config();
 const fs = require('fs');
+const mongo = require('./mongo');
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
@@ -21,8 +22,16 @@ for (const folder of commandFolders) {
 
 client.once('ready', readyDiscord);
 
-function readyDiscord() {
+async function readyDiscord() {
 	console.log('working bud!!');
+	await mongo().then(mongoose => {
+		try{
+			console.log('Connected to mongo!!');
+		}
+		finally{
+			mongoose.connection.close();
+		}
+	});
 }
 
 client.on('message', message => {
