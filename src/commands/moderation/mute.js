@@ -51,7 +51,7 @@ module.exports = {
 				return;
 			}
 
-			const duration = reasons[reason] * (previousMutes + 1);
+			const duration = reasons[reason] * (previousMutes.length + 1);
 
 			const expires = new Date();
 			expires.setHours(expires.getHours() + duration);
@@ -70,6 +70,7 @@ module.exports = {
 
 			await new muteSchema({
 				userId: target.id,
+				guildId: guild.id,
 				reason,
 				staffId: staff.id,
 				staffTag: staff.tag,

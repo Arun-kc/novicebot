@@ -3,7 +3,7 @@ require('dotenv').config();
 
 module.exports = async () => {
 	await mongoose.connect(process.env.MONGOPATH, {
-		keepAlive: true,
+		// keepAlive: true,
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 		useFindAndModify: false,

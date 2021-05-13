@@ -7,6 +7,7 @@ const reqString = {
 
 const muteSchema = mongoose.Schema({
 	userId: reqString,
+	guildId: reqString,
 	reason: reqString,
 	staffId: reqString,
 	staffTag: reqString,
