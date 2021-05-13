@@ -3,6 +3,7 @@
 
 require('dotenv').config();
 const fs = require('fs');
+const mongo = require('./mongo');
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
@@ -21,11 +22,11 @@ for (const folder of commandFolders) {
 
 client.once('ready', readyDiscord);
 
-function readyDiscord() {
+async function readyDiscord() {
 	console.log('working bud!!');
 }
 
-client.on('message', message => {
+client.on('message', async message => {
 
 	if(message.author.id == process.env.AUTHORID) {
 		message.react('🤓');
@@ -45,8 +46,17 @@ client.on('message', message => {
 	if (!command) return message.channel.send('No such command exist!!');
 
 	try {
+		await mongo().then(async mongoose => {
+			try{
+				console.log('Connected to mongo!!');
+				await command.execute(message, args);
+			}
+			finally{
+				mongoose.connection.close();
+			}
+		});
 
-		command.execute(message, args);
+		// command.execute(message, args);
 
 	}
 	catch (error) {
