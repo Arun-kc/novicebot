@@ -27,6 +27,7 @@
     "discord.js": "^12.5.3",
     "dotenv": "^8.2.0",
     "enmap": "^5.8.4",
+    "mongodb": "^3.6.6",
     "mongoose": "^5.12.8",
     "random-animals-api": "^1.2.5"
   },

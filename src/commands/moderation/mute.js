@@ -14,8 +14,6 @@ module.exports = {
 
 		const { guild, author: staff } = msg;
 
-		// const tag = `<@${member.id}>`;
-
 		if (args.length !== 2) {
 			msg.reply(`Correct syntax: ${guild.commandPrefix}mute <@Target> <Reason>`);
 			return;
@@ -35,7 +33,7 @@ module.exports = {
 			}
 			validReasons = validReasons.substr(0, validReasons.length - 2);
 			msg.reply(`Unknows reason, please use one of the following: 
-            ${validReasons}`);
+					${validReasons}`);
 			return;
 		}
 
@@ -62,12 +60,13 @@ module.exports = {
 				return role.name === 'Muted';
 			});
 			if(!mutedRole) {
+				// todo : need to create muted role automatically if its not present
 				msg.reply('Could not find a "Muted" role');
 				return;
 			}
 
-			const targetMember = (await guild.members.fetch()).get(target.id);
-			targetMember.roles.add(mutedRole);
+			const targetMember = (await guild.members.fetch(target.id));
+			await targetMember.roles.add(mutedRole);
 
 			await new muteSchema({
 				userId: target.id,
@@ -79,13 +78,12 @@ module.exports = {
 			}).save();
 
 			msg.reply(`You muted <@${target.id}> for "${reason}". They
-            will be unmuted in ${duration} hours.`);
+					will be unmuted in ${duration} hours.`);
 
 		}
 		catch(error) {
 			console.log(error);
 		}
-
 
 	},
 

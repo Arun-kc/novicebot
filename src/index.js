@@ -24,17 +24,9 @@ client.once('ready', readyDiscord);
 
 async function readyDiscord() {
 	console.log('working bud!!');
-	await mongo().then(mongoose => {
-		try{
-			console.log('Connected to mongo!!');
-		}
-		finally{
-			mongoose.connection.close();
-		}
-	});
 }
 
-client.on('message', message => {
+client.on('message', async message => {
 
 	if(message.author.id == process.env.AUTHORID) {
 		message.react('🤓');
@@ -54,8 +46,17 @@ client.on('message', message => {
 	if (!command) return message.channel.send('No such command exist!!');
 
 	try {
+		await mongo().then(async mongoose => {
+			try{
+				console.log('Connected to mongo!!');
+				await command.execute(message, args);
+			}
+			finally{
+				mongoose.connection.close();
+			}
+		});
 
-		command.execute(message, args);
+		// command.execute(message, args);
 
 	}
 	catch (error) {
