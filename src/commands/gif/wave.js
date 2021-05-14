@@ -3,6 +3,9 @@ const axios = require('axios');
 
 module.exports = {
 	name : 'wave',
+	aliases : [],
+	category: 'gif',
+	description: 'Shows a random waving gif',
 	async execute(client, msg, args) {
 
 		const keywords = 'anime wave';

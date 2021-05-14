@@ -3,6 +3,9 @@ const axios = require('axios');
 
 module.exports = {
 	name : 'shiba',
+	aliases : [],
+	category: 'img',
+	description: 'Shows a random shiba image',
 	// eslint-disable-next-line no-unused-vars
 	async execute(client, msg, args) {
 
@@ -13,7 +16,7 @@ module.exports = {
 		const img = response.data[0];
 
 		const embed = new Discord.MessageEmbed()
-			.setTitle('Here is your shiba!!')
+			.setTitle('🐕 | Here is your shiba!!')
 			.setImage(img)
 			.setColor('RANDOM')
 			.setTimestamp();

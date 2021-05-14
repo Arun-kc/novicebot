@@ -2,6 +2,9 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name : 'dog',
+	aliases : ['puppy', 'doggy'],
+	category: 'img',
+	description: 'Shows a random dog image',
 	// eslint-disable-next-line no-unused-vars
 	async execute(client, msg, args) {
 
@@ -14,7 +17,7 @@ module.exports = {
 		console.log(URL);
 
 		const embed = new Discord.MessageEmbed()
-			.setTitle('Here is your dog!!')
+			.setTitle('🐶 | Here is your dog!!')
 			.setImage(URL)
 			.setColor('RANDOM')
 			.setTimestamp();

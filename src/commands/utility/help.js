@@ -33,7 +33,7 @@ module.exports = {
 
 				data = {
 					name: dir.toUpperCase(),
-					value: cmds.length === 0 ? 'In progress.' : cmds.join(' '),
+					value: cmds.length === 0 ? 'In progress.' : cmds.join(' | '),
 				};
 
 				categories.push(data);
@@ -69,25 +69,25 @@ module.exports = {
 			const embed = new MessageEmbed()
 				.setTitle('Command Details:')
 				.setThumbnail(`https://cdn.discordapp.com/avatars/${client.user.id}/${client.user.avatar}.png`)
-				.addField('PREFIX:', `\`${prefix}\``)
+				.addField('⚙️ PREFIX:', `\`${prefix}\``)
 				.addField(
-					'COMMAND:',
+					'🛠️ COMMAND:',
 					command.name ? `\`${command.name}\`` : 'No name for this command.',
 				)
 				.addField(
-					'ALIASES:',
-					command.aliases
-						? `\`${command.aliases.join('` `')}\``
+					'👥 ALIASES:',
+					command.aliases.length != 0
+						? `\`${command.aliases.join('` | `')}\``
 						: 'No aliases for this command.',
 				)
 				.addField(
-					'USAGE:',
+					'🪄 USAGE:',
 					command.usage
 						? `\`${prefix}${command.name} ${command.usage}\``
 						: `\`${prefix}${command.name}\``,
 				)
 				.addField(
-					'DESCRIPTION:',
+					'📑 DESCRIPTION:',
 					command.description
 						? command.description
 						: 'No description for this command.',

@@ -8,6 +8,8 @@ const replies = [
 module.exports = {
 	name: 'hi',
 	category: 'fun',
+	aliases : [],
+	description: 'Bot greets you with random reply',
 	// eslint-disable-next-line no-unused-vars
 	execute(client, msg, args) {
 		const index = Math.floor(Math.random() * replies.length);

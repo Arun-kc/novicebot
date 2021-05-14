@@ -3,6 +3,8 @@ const Discord = require('discord.js');
 module.exports = {
 	name : 'cat',
 	aliases:['kitty'],
+	category: 'img',
+	description: 'Shows a random cat image',
 	// eslint-disable-next-line no-unused-vars
 	async execute(client, msg, args) {
 
@@ -15,7 +17,7 @@ module.exports = {
 		console.log(URL);
 
 		const embed = new Discord.MessageEmbed()
-			.setTitle('Here is your cat!!')
+			.setTitle('🐈 | Here is your cat!!')
 			.setImage(URL)
 			.setColor('RANDOM')
 			.setTimestamp();

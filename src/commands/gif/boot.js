@@ -3,6 +3,9 @@ const axios = require('axios');
 
 module.exports = {
 	name : 'boot',
+	aliases : ['kickbutt'],
+	category: 'gif',
+	description: 'Shows a random kicking gif',
 	async execute(client, msg, args) {
 
 		const keywords = 'anime kick';

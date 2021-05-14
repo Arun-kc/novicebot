@@ -4,6 +4,8 @@ const axios = require('axios');
 module.exports = {
 	name : 'gif',
 	category : 'fun',
+	usage: '<Topic>',
+	description: 'Shows a gif of the topic you mentioned or a random gif if topic is not specified.',
 	async execute(client, msg, args) {
 
 		let keywords = 'random';
@@ -30,7 +32,3 @@ module.exports = {
 
 	},
 };
-
-// exports.help = {
-//     name : 'gif'
-// }

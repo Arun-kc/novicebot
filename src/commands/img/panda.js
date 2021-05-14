@@ -2,6 +2,9 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name : 'panda',
+	aliases : [],
+	category: 'img',
+	description: 'Shows a random panda image',
 	// eslint-disable-next-line no-unused-vars
 	async execute(client, msg, args) {
 
@@ -14,7 +17,7 @@ module.exports = {
 		console.log(URL);
 
 		const embed = new Discord.MessageEmbed()
-			.setTitle('Here is your panda!!')
+			.setTitle('🐼 | Here is your panda!!')
 			.setImage(URL)
 			.setColor('RANDOM')
 			.setTimestamp();
