@@ -2,7 +2,8 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name : 'duck',
-	async execute(msg) {
+	// eslint-disable-next-line no-unused-vars
+	async execute(client, msg, args) {
 
 		let URL;
 		const animals = require('random-animals-api');

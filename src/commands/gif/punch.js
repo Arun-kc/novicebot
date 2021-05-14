@@ -3,7 +3,7 @@ const axios = require('axios');
 
 module.exports = {
 	name : 'punch',
-	async execute(msg, args) {
+	async execute(client, msg, args) {
 
 		const keywords = 'anime punch';
 		const { member, mentions } = msg;

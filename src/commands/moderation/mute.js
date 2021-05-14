@@ -10,7 +10,7 @@ module.exports = {
 	name: 'mute',
 	description: 'Mutes a user',
 	// eslint-disable-next-line no-unused-vars
-	async execute(msg, args) {
+	async execute(client, msg, args) {
 
 		const { guild, author: staff } = msg;
 

@@ -4,7 +4,7 @@ module.exports = {
 	name: 'warn',
 	description: 'Warns a user',
 	// eslint-disable-next-line no-unused-vars
-	async execute(msg, args) {
+	async execute(client, msg, args) {
 
 		const { mentions, member } = msg;
 		const target = mentions.users.first();

@@ -24,13 +24,13 @@ module.exports = async (Discord, client, message) => {
 		const commandUsingDb = ['mute', 'unmute', 'warn'];
 		// directly use commands without  connecting with db if not required
 		if(!commandUsingDb.includes(command.name)) {
-			command.execute(message, args);
+			command.execute(client, message, args);
 		}
 		else{
 			await mongo().then(async mongoose => {
 				try{
 					console.log('Connected to mongo!!');
-					await command.execute(message, args);
+					await command.execute(client, message, args);
 				}
 				finally{
 					mongoose.connection.close();

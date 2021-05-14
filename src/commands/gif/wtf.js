@@ -3,7 +3,7 @@ const axios = require('axios');
 
 module.exports = {
 	name : 'wtf',
-	async execute(msg, args) {
+	async execute(client, msg, args) {
 
 		const keywords = 'wtf';
 		const { member, mentions } = msg;

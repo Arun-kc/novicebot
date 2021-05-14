@@ -4,7 +4,7 @@ module.exports = {
 	name: 'serverinfo',
 	description: 'Returns the guilds informations',
 	// eslint-disable-next-line no-unused-vars
-	async execute(msg, args) {
+	async execute(client, msg, args) {
 
 		const { guild } = msg;
 		const { name, region, memberCount, owner, createdAt, roles, channels } = guild;

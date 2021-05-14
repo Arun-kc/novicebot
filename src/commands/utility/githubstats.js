@@ -8,7 +8,8 @@ async function getJson(response) {
 
 module.exports = {
 	name: 'githubstats',
-	async execute(msg, args) {
+	// eslint-disable-next-line no-unused-vars
+	async execute(client, msg, args) {
 		const user = args[0];
 		const url = `https://api.github.com/users/${user}`;
 		const response = await fetch(url);

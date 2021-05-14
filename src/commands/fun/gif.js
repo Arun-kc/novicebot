@@ -4,7 +4,7 @@ const axios = require('axios');
 module.exports = {
 	name : 'gif',
 	category : 'fun',
-	async execute(msg, args) {
+	async execute(client, msg, args) {
 
 		let keywords = 'random';
 		if(args.length > 0) {

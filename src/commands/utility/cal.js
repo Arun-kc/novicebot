@@ -1,7 +1,8 @@
 module.exports = {
 	name: 'cal',
 	description: 'Does simple calculations',
-	execute(msg, args) {
+	// eslint-disable-next-line no-unused-vars
+	async execute(client, msg, args) {
 
 		const operations = ['add', 'subtract', 'multiply', 'division'];
 		const firstNo = Number(args[1]);

@@ -4,7 +4,7 @@ module.exports = {
 	name: 'ban',
 	description: 'Bans a user',
 	// eslint-disable-next-line no-unused-vars
-	async execute(msg, args) {
+	async execute(client, msg, args) {
 
 		const { member, mentions } = msg;
 
