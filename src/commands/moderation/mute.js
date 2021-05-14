@@ -84,6 +84,7 @@ module.exports = {
 		}
 		catch(error) {
 			console.log(error);
+			msg.reply('Bot is missing permission!! Please check whether the bot is above Muted role and the specified member');
 		}
 
 	},
