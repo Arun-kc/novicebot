@@ -30,7 +30,7 @@ module.exports = {
 		console.log(args);
 		if(args.length < 1 || args[0] === 'me' || args[0] === `<@!${member.id}>`) {
 			const embed = new Discord.MessageEmbed()
-				.setTitle(`👏 ${member.nickname} gives claps to themselves`)
+				.setTitle(`👏 ${member.nickname || member.user.username} gives claps to themselves`)
 				.setImage(gif)
 				.setColor('RANDOM')
 				.setTimestamp();
@@ -41,7 +41,7 @@ module.exports = {
 		}
 		else{
 			const embed = new Discord.MessageEmbed()
-				.setTitle(`👏 ${member.nickname} gives claps to ${usersMap} 👏`)
+				.setTitle(`👏 ${member.nickname || member.user.username} gives claps to ${usersMap} 👏`)
 				.setImage(gif)
 				.setColor('RANDOM')
 				.setTimestamp();

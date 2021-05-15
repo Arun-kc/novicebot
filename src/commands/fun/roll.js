@@ -15,13 +15,13 @@ module.exports = {
 			msg.channel.send('**Please check your syntax!!**');
 		}
 		else if(args.length === 1) {
-			msg.channel.send(`🎲 **${msg.member.nickname}**, you rolled **${getRndInteger(0, Number(args[0]))}**`);
+			msg.channel.send(`🎲 **${msg.member.nickname || msg.author.username}**, you rolled **${getRndInteger(0, Number(args[0]))}**`);
 		}
 		else if(args.length === 2) {
-			msg.channel.send(`🎲 **${msg.member.nickname}**, you rolled **${getRndInteger(Number(args[0]), Number(args[1]))}**`);
+			msg.channel.send(`🎲 **${msg.member.nickname || msg.author.username}**, you rolled **${getRndInteger(Number(args[0]), Number(args[1]))}**`);
 		}
 		else{
-			msg.channel.send(`🎲 **${msg.member.nickname}**, you rolled **${getRndInteger(0, 100)}**`);
+			msg.channel.send(`🎲 **${msg.member.nickname || msg.author.username}**, you rolled **${getRndInteger(0, 100)}**`);
 		}
 
 	},

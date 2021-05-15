@@ -13,7 +13,7 @@ module.exports = {
 			msg.channel.send('**Please provide more than 1 choice**');
 		}
 		else{
-			msg.channel.send(`☑️ **${msg.member.nickname}**, My choice is : **${replies[index]}**`);
+			msg.channel.send(`☑️ **${msg.member.nickname || msg.author.username}**, My choice is : **${replies[index]}**`);
 		}
 
 	},

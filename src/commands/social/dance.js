@@ -30,7 +30,7 @@ module.exports = {
 		console.log(args);
 		if(args.length < 1 || args[0] === 'me' || args[0] === `<@!${member.id}>`) {
 			const embed = new Discord.MessageEmbed()
-				.setTitle(`💃 ${member.nickname} shows their best moves!!`)
+				.setTitle(`💃 ${member.nickname || member.user.username} shows their best moves!!`)
 				.setImage(gif)
 				.setColor('RANDOM')
 				.setTimestamp();
@@ -41,7 +41,7 @@ module.exports = {
 		}
 		else{
 			const embed = new Discord.MessageEmbed()
-				.setTitle(`💃 ${member.nickname} dances with ${usersMap} ✨`)
+				.setTitle(`💃 ${member.nickname || member.user.username} dances with ${usersMap} ✨`)
 				.setImage(gif)
 				.setColor('RANDOM')
 				.setTimestamp();

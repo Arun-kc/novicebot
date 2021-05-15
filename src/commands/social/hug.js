@@ -41,7 +41,7 @@ module.exports = {
 		}
 		else{
 			const embed = new Discord.MessageEmbed()
-				.setTitle(`❤️ ${member.nickname} hugs ${usersMap} ❤️`)
+				.setTitle(`❤️ ${member.nickname || member.user.username} hugs ${usersMap} ❤️`)
 				.setImage(gif)
 				.setColor('RANDOM')
 				.setTimestamp();

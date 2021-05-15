@@ -35,7 +35,7 @@ module.exports = {
 			msg.channel.send('**Please ask a question**');
 		}
 		else{
-			msg.channel.send(`🎱 **${msg.member.nickname}**, ${replies[index]}`);
+			msg.channel.send(`🎱 **${msg.member.nickname || msg.author.username}**, ${replies[index]}`);
 		}
 
 	},

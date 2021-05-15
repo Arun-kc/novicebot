@@ -30,7 +30,7 @@ module.exports = {
 		console.log(args);
 		if(args.length < 1 || args[0] === 'me' || args[0] === `<@!${member.id}>`) {
 			const embed = new Discord.MessageEmbed()
-				.setTitle(`👉 ${member.nickname} pokes themselves`)
+				.setTitle(`👉 ${member.nickname || member.user.username} pokes themselves`)
 				.setImage(gif)
 				.setColor('RANDOM')
 				.setTimestamp();
@@ -41,7 +41,7 @@ module.exports = {
 		}
 		else{
 			const embed = new Discord.MessageEmbed()
-				.setTitle(`👉 ${member.nickname} pokes ${usersMap} 😋`)
+				.setTitle(`👉 ${member.nickname || member.user.username} pokes ${usersMap} 😋`)
 				.setImage(gif)
 				.setColor('RANDOM')
 				.setTimestamp();
