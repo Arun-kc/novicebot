@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name: 'serverinfo',
+	aliases : [],
+	category: 'utility',
 	description: 'Returns the guilds informations',
 	// eslint-disable-next-line no-unused-vars
 	async execute(client, msg, args) {
@@ -17,10 +19,10 @@ module.exports = {
 		if (!rolemap) rolemap = 'No roles';
 
 		const embed = new Discord.MessageEmbed()
-			.setTitle(`Server info for Guild ${name}`)
+			.setTitle(`ℹ️  Server info for Guild ${name}`)
 			.setThumbnail(guild.iconURL())
 			.setImage(guild.bannerURL())
-			.setColor('RANDOM')
+			.setColor('#1f782f')
 			.addFields(
 				{
 					name: 'Region',
@@ -50,6 +52,7 @@ module.exports = {
 					value: createdAt,
 				},
 			)
+			.setFooter('Zoro', `https://cdn.discordapp.com/avatars/${client.user.id}/${client.user.avatar}.png`)
 			.setTimestamp();
 
 
