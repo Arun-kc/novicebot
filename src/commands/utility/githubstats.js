@@ -8,9 +8,16 @@ async function getJson(response) {
 
 module.exports = {
 	name: 'githubstats',
+	aliases : [],
+	usage: '<Github Username>',
+	category: 'utility',
+	description: 'Shows github stats',
 	// eslint-disable-next-line no-unused-vars
 	async execute(client, msg, args) {
 		const user = args[0];
+		if(args.length < 1) {
+			return msg.channel.send('**Please provide a username!**');
+		}
 		const url = `https://api.github.com/users/${user}`;
 		const response = await fetch(url);
 		const json = await getJson(response);

@@ -1,5 +1,7 @@
 module.exports = {
 	name: 'cal',
+	aliases : [],
+	category: 'utility',
 	description: 'Does simple calculations',
 	// eslint-disable-next-line no-unused-vars
 	async execute(client, msg, args) {

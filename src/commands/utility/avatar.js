@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name: 'avatar',
+	aliases : [],
+	category: 'utility',
 	description: 'Returns a users avatar',
 	// eslint-disable-next-line no-unused-vars
 	async execute(client, msg, args) {

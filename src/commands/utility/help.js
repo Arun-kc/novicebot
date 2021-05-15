@@ -5,6 +5,7 @@ require('dotenv').config();
 module.exports = {
 	name: 'help',
 	aliases : ['h'],
+	category: 'utility',
 	description: 'Shows all available bot commands.',
 	async execute(client, message, args) {
 		const prefix = process.env.prefix;
