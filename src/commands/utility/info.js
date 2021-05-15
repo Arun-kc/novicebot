@@ -9,6 +9,12 @@ module.exports = {
 	// eslint-disable-next-line no-unused-vars
 	async execute(client, msg, args) {
 
+		let totalMembers = 0;
+
+		for(const guild of client.guilds.cache) {
+			totalMembers += await guild[1].members.guild.memberCount;
+		}
+
 		const { users, guilds, channels, uptime } = client;
 
 		const embed = new Discord.MessageEmbed()
@@ -34,6 +40,11 @@ module.exports = {
 				{
 					name: 'Users',
 					value: users.cache.size,
+					inline: true,
+				},
+				{
+					name: 'Members',
+					value: totalMembers,
 					inline: true,
 				},
 				{
@@ -65,10 +76,6 @@ module.exports = {
 				},
 				{
 					name: 'Invite Link',
-					value: 'coming soon...',
-				},
-				{
-					name: 'Github Link',
 					value: 'coming soon...',
 				},
 				{
