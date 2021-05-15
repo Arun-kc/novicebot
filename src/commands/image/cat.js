@@ -11,18 +11,21 @@ module.exports = {
 		let URL;
 		const animals = require('random-animals-api');
 		await animals.cat()
-			.then(url => URL = url)
-			.catch((error) => console.error(error));
+			.then(url =>{
+				URL = url;
+				console.log(URL);
 
-		console.log(URL);
-
-		const embed = new Discord.MessageEmbed()
-			.setTitle('🐈 | Here is your cat!!')
-			.setImage(URL)
-			.setColor('RANDOM')
-			.setTimestamp();
-		msg.channel.send(embed);
-
+				const embed = new Discord.MessageEmbed()
+					.setTitle('🐈 | Here is your cat!!')
+					.setImage(URL)
+					.setColor('RANDOM')
+					.setTimestamp();
+				msg.channel.send(embed);
+			})
+			.catch((error) => {
+				msg.channel.send('Sorry the image is not loading!!');
+				return console.error(error);
+			});
 
 	},
 };
