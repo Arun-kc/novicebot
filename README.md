@@ -22,7 +22,7 @@
       <img align="right" height=150rem width=150rem alt="Status: 🚀 In progress 🚀" src="https://media.giphy.com/media/YnvdzzjwKpgW9gAHq4/giphy.gif" />
 
 </p>
-Zoro is a free and opensource discord bot who's main object is to entertain its users. He's still in his infancy stage equipped with some fund and basic moderation commands. 
+Zoro is a free and opensource discord bot who's main object is to entertain its users. He's still in his infancy stage equipped with some fun and basic moderation commands. 
 <br><br>
 😊 Show some ❤️ by giving a star! ⭐
 <br><br>
