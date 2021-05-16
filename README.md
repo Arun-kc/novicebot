@@ -23,7 +23,9 @@
 
 </p>
 Zoro is a free and opensource discord bot who's main object is to entertain its users. He's still in his infancy stage equipped with some fund and basic moderation commands. 
-<br><br><br>
+<br><br>
+😊 Show some ❤️ by giving a star! ⭐
+<br><br>
 
 
 ## Table of Contents
