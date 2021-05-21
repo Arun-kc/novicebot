@@ -15,7 +15,18 @@ module.exports = {
 			totalMembers += await guild[1].members.guild.memberCount;
 		}
 
-		const { users, guilds, channels, uptime } = client;
+		const { users, guilds, channels } = client;
+
+		let totalSeconds = (client.uptime / 1000);
+		const days = Math.floor(totalSeconds / 86400);
+		totalSeconds %= 86400;
+		const hours = Math.floor(totalSeconds / 3600);
+		totalSeconds %= 3600;
+		const minutes = Math.floor(totalSeconds / 60);
+		const seconds = Math.floor(totalSeconds % 60);
+
+		const uptime = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
 
 		const embed = new Discord.MessageEmbed()
 			.setAuthor(`⚔️ ${client.user.username} ⚔️`, client.user.displayAvatarURL())
