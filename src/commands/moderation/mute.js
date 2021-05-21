@@ -4,6 +4,7 @@ const muteSchema = require('../../schemas/mute-schema');
 const reasons = {
 	SPAMMING: 5,
 	ADVERTISING: 24,
+	MISBEHAVING: 10,
 };
 
 module.exports = {
