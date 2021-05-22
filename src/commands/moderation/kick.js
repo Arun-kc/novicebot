@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name: 'kick',
+	category: 'moderation',
+	aliases : [],
 	description: 'Kicks a user',
 	// eslint-disable-next-line no-unused-vars
 	async execute(client, msg, args) {

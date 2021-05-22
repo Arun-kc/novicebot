@@ -1,16 +1,20 @@
 // const Discord = require('discord.js');
 const muteSchema = require('../../schemas/mute-schema');
+require('dotenv').config();
 
 module.exports = {
 	name: 'unmute',
+	category: 'moderation',
+	aliases : [],
 	description: 'Unmutes a user',
 	// eslint-disable-next-line no-unused-vars
 	async execute(client, msg, args) {
 
 		const { guild } = msg;
+		const prefix = process.env.prefix;
 
 		if (args.length !== 1) {
-			msg.reply(`Correct syntax: ${guild.commandPrefix}mute <@Target>`);
+			msg.reply(`Correct syntax: ${guild.commandPrefix || prefix}mute <@Target>`);
 			return;
 		}
 

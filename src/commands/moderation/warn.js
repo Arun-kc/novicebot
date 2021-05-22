@@ -2,6 +2,8 @@ const warnSchema = require('../../schemas/warn-schema');
 
 module.exports = {
 	name: 'warn',
+	category: 'moderation',
+	aliases : [],
 	description: 'Warns a user',
 	// eslint-disable-next-line no-unused-vars
 	async execute(client, msg, args) {
