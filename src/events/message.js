@@ -3,20 +3,19 @@ const mongo = require('../mongo');
 
 module.exports = async (Discord, client, message) => {
 
-	if(message.author.id == process.env.AUTHORID) {
+	if(message.author.id == process.env.AUTHORID && message.guild) {
 		message.react('🤓');
 	}
 
 	let args = undefined;
 	if(message.content.replace(/zoro/i, 'zoro').startsWith('zoro')) {
-		console.log('starts with zoro');
 		const prefix = 'zoro';
-		if (!message.content.replace(/zoro/i, 'zoro').startsWith(prefix) || message.author.bot) return;
+		if (!message.guild || !message.content.replace(/zoro/i, 'zoro').startsWith(prefix) || message.author.bot) return;
 		args = message.content.slice(prefix.length).trim().split(/ +/);
 	}
 	else{
 		const prefix = process.env.prefix;
-		if (!message.content.startsWith(prefix) || message.author.bot) return;
+		if (!message.guild || !message.content.startsWith(prefix) || message.author.bot) return;
 
 		args = message.content.slice(prefix.length).trim().split(/ +/);
 	}
