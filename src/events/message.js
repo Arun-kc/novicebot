@@ -7,10 +7,20 @@ module.exports = async (Discord, client, message) => {
 		message.react('🤓');
 	}
 
-	const prefix = process.env.prefix;
-	if (!message.content.startsWith(prefix) || message.author.bot) return;
+	let args = undefined;
+	if(message.content.replace(/zoro/i, 'zoro').startsWith('zoro')) {
+		console.log('starts with zoro');
+		const prefix = 'zoro';
+		if (!message.content.replace(/zoro/i, 'zoro').startsWith(prefix) || message.author.bot) return;
+		args = message.content.slice(prefix.length).trim().split(/ +/);
+	}
+	else{
+		const prefix = process.env.prefix;
+		if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-	const args = message.content.slice(prefix.length).trim().split(/ +/);
+		args = message.content.slice(prefix.length).trim().split(/ +/);
+	}
+
 	const commandName = args.shift().toLowerCase();
 	console.log(commandName, args);
 	const command = client.commands.get(commandName)
