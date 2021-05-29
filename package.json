@@ -24,12 +24,14 @@
   "homepage": "https://github.com/Arun-kc/novicebot#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "discord-image-generation": "^1.4.9",
     "discord.js": "^12.5.3",
     "dotenv": "^8.2.0",
     "enmap": "^5.8.4",
     "mongodb": "^3.6.6",
     "mongoose": "^5.12.8",
-    "random-animals-api": "^1.2.6"
+    "random-animals-api": "^1.2.6",
+    "reddit-image-fetcher": "^2.0.7"
   },
   "devDependencies": {
     "eslint": "^7.26.0"
