@@ -30,7 +30,7 @@ module.exports = async (Discord, client, message) => {
 	if (!command) return message.channel.send('No such command exist!!');
 
 	try {
-		const commandUsingDb = ['mute', 'unmute', 'warn'];
+		const commandUsingDb = ['mute', 'unmute', 'warn', 'listwarnings'];
 		// directly use commands without  connecting with db if not required
 		if(!commandUsingDb.includes(command.name)) {
 			command.execute(client, message, args);

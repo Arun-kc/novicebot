@@ -39,11 +39,11 @@ module.exports = {
 			if(!reasons[reason]) {
 				let validReasons = '';
 				for (const key in reasons) {
-					validReasons += `${key}, `;
+					console.log(typeof (key), typeof (reasons[key]));
+					validReasons += `${key}: ${reasons[key]}hr \n`;
 				}
 				validReasons = validReasons.substr(0, validReasons.length - 2);
-				msg.reply(`Unknows reason, please use one of the following: 
-					${validReasons}`);
+				msg.reply(`Unknows reason, please use one of the following reasons: \n${validReasons}`);
 				return;
 			}
 

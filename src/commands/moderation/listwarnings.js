@@ -2,10 +2,10 @@ const Discord = require('discord.js');
 const warnSchema = require('../../schemas/warn-schema');
 
 module.exports = {
-	name: 'warn',
+	name: 'listwarnings',
 	category: 'moderation',
-	aliases: [],
-	description: 'Warns a user',
+	aliases: ['ls'],
+	description: 'List warnings for a user',
 	// eslint-disable-next-line no-unused-vars
 	async execute(client, msg, args) {
 		const { mentions, member } = msg;
@@ -16,41 +16,42 @@ module.exports = {
 		if (member.hasPermission('ADMINISTRATOR')) {
 			if (!target) {
 				msg.reply(
-					`Please specify someone to warn. Correct syntax: ${msg.guild.commandPrefix}warn <@Target> <Reason>`,
+					'Please specify a user to load the warnings for.',
 				);
 				return;
 			}
 
-			args.shift();
+			// args.shift();
 			const guildId = msg.guild.id;
 			const userId = target.id;
-			const reason = args.join(' ');
+			// const reason = args.join(' ');
 
-			const warning = {
-				author: msg.member.user.tag,
-				timestamp: new Date().getTime(),
-				reason,
-			};
 
-			await warnSchema.findOneAndUpdate(
+			const results = await warnSchema.findOne(
 				{
 					guildId,
 					userId,
-				},
-				{
-					guildId,
-					userId,
-					$push: {
-						warnings: warning,
-					},
-				},
-				{
-					upsert: true,
-				},
-			);
+				});
+			if(results == null) {
+				console.log(results);
+				const embed = new Discord.MessageEmbed()
+					.setColor('GREEN')
+					.setDescription(
+						`✅ <@${userId}> is clean`,
+					);
+				return msg.channel.send(embed);
+			}
 
-			msg.channel.send(
-				`⚠️ <@${target.id}> you have been been warned by ${tag} for the reason: **${reason}** ⚠️`,
+
+			let reply = `⚠️  **List of previous warnings for <@${userId}>: **\n\n`;
+
+			for (const warning of results.warnings) {
+				const { author, timestamp, reason } = warning;
+				reply += `🔷 By: ${author} | Date: ${new Date(timestamp).toDateString()} | Reason: "${reason}"\n`;
+			}
+
+			return msg.channel.send(
+				reply,
 			);
 		}
 		else {
