@@ -12,7 +12,10 @@ We ❤️ input from you all awesome developers! We want to make contributing to
 
 Pull requests are the best way to propose changes. We actively welcome your pull requests:
 
-1. Fork the repo and create your branch from `main`.
+1. Fork the repo and create your branch from `main`. Create a branch in the following format.
+```
+$ git checkout -b yourname/branchname
+```
 1. If you've added code that should be tested, add some test examples.
 1. If you've changed APIs or used some new APIs for new features, update the documentation.
 1. Issue that pull request!
