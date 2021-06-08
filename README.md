@@ -31,6 +31,7 @@ Zoro is a free and opensource discord bot who's main object is to entertain its 
 ## Table of Contents
 - [Installation](https://github.com/Arun-kc/novicebot#Installation)
 - [Setting-Up](https://github.com/Arun-kc/novicebot#Setting-Up)
+- [Contribution](https://github.com/Arun-kc/novicebot#Contribution)
 - [To-Do](https://github.com/Arun-kc/novicebot#To-Do)
 
 ## Installation
@@ -65,6 +66,10 @@ Once the set up is done you can run the bot using the command
 ```
 npm run dev
 ```
+
+## Contribution
+
+Check out [contribution](https://github.com/Arun-kc/novicebot/blob/main/CONTRIBUTING.md) for more info
 
 ## To-Do
 
