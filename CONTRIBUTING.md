@@ -12,7 +12,7 @@ We ❤️ input from you all awesome developers! We want to make contributing to
 
 Pull requests are the best way to propose changes. We actively welcome your pull requests:
 
-1. Fork the repo and create your branch from `main`. Create a branch in the following format.
+1. Fork the repo and create your branch from `main`. Create your branch in the following format.
 ```
 $ git checkout -b yourname/branchname
 ```
