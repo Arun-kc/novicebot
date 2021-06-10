@@ -6,7 +6,6 @@ module.exports = {
 	aliases : ['botinfo'],
 	category: 'utility',
 	description: 'Returns the bots informations',
-	link:'https://zorobot.vercel.app/',
 	// eslint-disable-next-line no-unused-vars
 	async execute(client, msg, args) {
 
@@ -80,7 +79,7 @@ module.exports = {
 			.addFields(
 				{
 					name: 'Website',
-					value: 'coming soon...',
+					value: 'https://zorobot.vercel.app/',
 				},
 				{
 					name: 'Support Server',
