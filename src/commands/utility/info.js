@@ -79,7 +79,7 @@ module.exports = {
 			.addFields(
 				{
 					name: 'Website',
-					value: 'coming soon...',
+					value: 'https://zorobot.vercel.app/',
 				},
 				{
 					name: 'Support Server',
