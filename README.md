@@ -1,7 +1,10 @@
 <p align="center">
     <img src="assets/zoro.png" alt="Logo" height=100rem width=100rem  style="border-radius:50%">
     <h1 align="center">⚔️ Zoro a NoviceBot ⚔️</h1>
-    <h3 align="center">Status: 🚀 In progress 🚀</h3>
+    <h3 align="center"><a href="https://top.gg/bot/831858970401701898">
+  <img src="https://top.gg/api/widget/status/831858970401701898.svg" alt="Zoro" />
+  </a></h3>
+<!--      <h3 align="center">Status: 🚀 In progress 🚀</h3> -->
 </p>
 
 <p align="center">
