@@ -79,7 +79,7 @@ module.exports = {
 			.addFields(
 				{
 					name: 'Website',
-					value: 'https://zorobot.vercel.app/',
+					value: '[Im Cool right??](https://zorobot.vercel.app/)',
 				},
 				{
 					name: 'Support Server',
@@ -87,7 +87,7 @@ module.exports = {
 				},
 				{
 					name: 'Invite Link',
-					value: 'coming soon...',
+					value: '[Invite Me!!](https://top.gg/bot/831858970401701898/invite/)',
 				},
 				{
 					name: 'Sponsor',
